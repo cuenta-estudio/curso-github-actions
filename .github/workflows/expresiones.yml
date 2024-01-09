@@ -1,0 +1,33 @@
+name: Expresiones
+run-name: ¡Estoy aprendiendo Expresiones con Github Actions!
+on:
+  workflow_dispatch:
+    inputs:
+      edad:
+        description: 'Edad'
+        required: true
+        type: integer
+      nombre:
+        description: 'Nombre'
+        required: true
+        default: 'Juan'
+        type: string
+jobs:
+  mayor:
+    if: ${{inputs.edad >= 18 && inputs.edad < 60}}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Correr Script
+        run: echo ${{inputs.nombre}} es adulto
+  menor:
+    if: ${{inputs.edad < 18}}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Correr Script
+        run: echo ${{inputs.nombre}} es menor de edad 
+  viejito:
+    if: ${{inputs.edad >= 60}}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Correr Script
+        run: echo ${{inputs.nombre}} es viejito
