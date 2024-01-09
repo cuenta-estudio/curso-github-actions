@@ -1,9 +1,0 @@
-name: Contextos
-run-name: ¡Aprendiendo Contextos en Github Actions!
-on: push
-jobs:
-  check-rama-estudio:
-    if: ${{ github.ref == 'refs/heads/aprendiendo-github-actions'}}
-    runs-on:  ubuntu-latest
-    steps:
-      - run:  echo 'Desplegando en la rama $GITHUB_REF'
