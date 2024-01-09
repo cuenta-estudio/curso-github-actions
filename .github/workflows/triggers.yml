@@ -1,0 +1,22 @@
+name: Prueba Triggers # Nombre del Workflow
+run-name: ¡Estoy aprendiendo a usar diferentes Triggers!
+on:  # En qué situaciones se desencaderá el workflow
+  push: # Se desencadenará cuando alguien haga un push
+    branches:
+      -  aprendiendo-github-actions # Se desencadenará cuando alguien haga un push en la rama indicada
+  pull_request: # Cuando le ocurra algo a un pull request
+    types: [opened, labeled] # Cuando se abra un pr o cuando se abra un pr y se le de una etiqueta***
+  schedule: # Se ejecutará en función a un cron
+    -  cron: '5 4 * * 6' # Detalle del cron
+jobs: #Definición de los jobs
+  hola-mundo: #Nombre del job
+    runs-on: ubuntu-latest #Maquina en la que correrá
+    steps: #Lista de steps del job hola-mundo
+      - name: checkout-repo
+        uses: actions/checkout@v3
+      - name: Instalar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Esta es la actividad numero 2 relacionada a triggers
+        run: python3 main.py
