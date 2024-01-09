@@ -5,7 +5,7 @@ on:  # En qué situaciones se desencaderá el workflow
     branches:
       -  aprendiendo-github-actions # Se desencadenará cuando alguien haga un push en la rama indicada
   pull_request: # Cuando le ocurra algo a un pull request
-    types: [opened, labeled] # Cuando se abra un pr o cuando se ***
+    types: [opened, labeled] # Cuando se abra un pr o cuando se abra un pr y se le de una etiqueta***
   schedule: # Se ejecutará en función a un cron
     -  cron: '5 4 * * 6' # Detalle del cron
 jobs: #Definición de los jobs
