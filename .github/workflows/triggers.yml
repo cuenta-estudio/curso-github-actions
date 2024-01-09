@@ -1,4 +1,5 @@
 name: Prueba Triggers # Nombre del Workflow
+run-name: ¡Estoy aprendiendo a usar diferentes Triggers!
 on:  # En qué situaciones se desencaderá el workflow
   push: # Se desencadenará cuando alguien haga un push
     branches:
